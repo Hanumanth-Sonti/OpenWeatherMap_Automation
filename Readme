@@ -16,6 +16,7 @@ longitude: 139
 Zip Code: 10007, corresponding city: New York, 94040, Mountain View
 
 #Execute each script and generate a HTML Test Report in separate folder
+Change directory to api_automation python package folder to run pytest commands below
 Query the URI by the city name:
 -   pytest -s -v --html=../query_city_test_report/testreport_city.html --self-contained-html test_query_by_city.py
 
