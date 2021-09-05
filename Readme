@@ -1,0 +1,44 @@
+# The OpenWeatherAPI Current Weather Data Automation tests developed by Python
+
+#Installation of below plugins
+install requests
+install pytest framework
+install pytest-html
+
+#Usage
+The following inputs to query the API - City Name, Latitude, Longitude,
+Zip Code and Country Code will be asked for user input using input() function
+sample inputs:
+city - london
+country code - uk
+latitude: 34
+longitude: 139
+Zip Code: 10007, corresponding city: New York, 94040, Mountain View
+
+#Execute each script and generate a HTML Test Report in separate folder
+Query the URI by the city name:
+-   pytest -s -v --html=../query_city_test_report/testreport_city.html --self-contained-html test_query_by_city.py
+
+Query the URI by latitude and longitude:
+-   pytest -s -v --html=../query_lat_lon_test_report/testreport_lat_lon.html --self-contained-html test_query_by_geographical_coordinates.py
+
+Query the URI by ZIP code:
+- pytest -s -v --html=../query_zipcode_test_report/testreport_zipcode.html --self-contained-html test_query_by_zipcode.py
+
+#Command line execution using pytest test framework:
+To run this below tests,open command prompt or terminal & navigate to project directory
+#Using Markers
+pytest test_query_by_city.py -sv -m "city"
+pytest test_query_by_geographical_coordinates.py -sv -m "geography"
+pytest test_query_by_zipcode.py -sv -m "zipcode"
+
+#Without Markers
+pytest test_query_by_city.py -sv
+pytest test_query_by_geographical_coordinates.py -sv
+pytest test_query_by_zipcode.py -sv
+
+#Run specific test method
+- For Example,pytest test_query_by_city.py::test_query_by_city_name -sv
+
+#Run all test class or test methods whose name matches to the string provided with -k parameter
+- For Example: pytest test_query_by_city.py -sv -k "city"
